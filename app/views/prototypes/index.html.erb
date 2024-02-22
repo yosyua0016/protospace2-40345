@@ -7,13 +7,8 @@
       </div>
     <% end %>
       
-    <<div class="card__wrapper">
-      <% @prototypes.each do |prototype| %>
-        <div class="card">
-          <h2><%= prototype.title %></h2>
-          <p><%= prototype.catch_copy %></p>
-          <!-- 他のプロトタイプの情報を表示する -->
-        </div>
-      <% end %>
+    <div class="card__wrapper">
+      <%= render partial: 'prototype', collection: @prototypes %>
+    </div>
   </div>
 </main>
