@@ -13,6 +13,11 @@ module Protospace240345
     config.i18n.default_locale = :ja
     config.active_storage.variant_processor = :mini_magick
 
+    # Active StorageのURLオプションを設定する
+    config.after_initialize do
+      ActiveStorage::Current.url_options = Rails.application.routes.default_url_options
+    end
+
     # Configuration for the application, engines, and railties goes here.
     #
     # These settings can be overridden in specific environments using the files

@@ -1,10 +1,8 @@
 <div class="card">
-  <% if prototype.image.attached? %>
-    <%= image_tag prototype.image %>
-  <% else %>
-    <%= image_tag 'default_image.jpg' %>
+  <%= link_to prototype_path(prototype) do %>
+    <%= image_tag prototype.image, class: 'prototype-image' if prototype.image.attached? %>
   <% end %>
-  <h2><%= prototype.title %></h2>
+  <h2><%= link_to prototype.title, prototype_path(prototype) %></h2>
   <p><%= prototype.catch_copy %></p>
   <p>投稿者: <%= prototype.user.name %></p>
 </div>
